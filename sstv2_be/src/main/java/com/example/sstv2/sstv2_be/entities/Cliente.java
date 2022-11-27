@@ -18,18 +18,22 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long   id;
 	private String nome;
+	private String telefone;
 	private String email;
 	private String cpfcnpj;
+	private String senha;
 	
 	public Cliente() {
 	}
 
-	public Cliente(Long id, String nome, String email, String cpfcnpj) {
+	public Cliente(Long id, String nome, String telefone, String email, String cpfcnpj, String senha) {
 		super();
-		this.id = id;
-		this.nome = nome;
-		this.email = email;
-		this.cpfcnpj = cpfcnpj;
+		this.id       = id;
+		this.nome     = nome;
+		this.telefone = telefone;
+		this.email    = email;
+		this.cpfcnpj  = cpfcnpj;
+		this.senha    = senha;
 	}
 
 	public Long getId() {
@@ -64,6 +68,22 @@ public class Cliente implements Serializable {
 		this.cpfcnpj = cpfcnpj;
 	}
 
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
